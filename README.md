@@ -49,7 +49,7 @@ The system employs 4 specialized agents coordinated through sequential task exec
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Gemini 1.5 Flash                     │
+│                  Gemini 2.5 Flash Lite                  │
 │                  (LLM Decision Engine)                  │
 └─────────────────────┬───────────────────────────────────┘
                       │
