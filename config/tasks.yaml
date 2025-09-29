@@ -1,0 +1,96 @@
+parse_and_plan:
+  description: |
+    Parse the production orders from the scenario and create manufacturing 
+    sequences for each product type. Coordinate robot assignments based on their capabilities.
+    
+    Orders to process:
+    - Widget-A: 3 units (assembly)
+    - Widget-B: 2 units (welding)
+    
+    Use parse_production_order, generate_manufacturing_sequence, and coordinate_robots tools.
+  expected_output: |
+    A comprehensive production plan including:
+    - Parsed order details for all products
+    - Manufacturing sequences for Widget-A and Widget-B
+    - Initial robot coordination and task assignments
+
+execute_production:
+  description: |
+    Execute the manufacturing operations for all 5 units across both products.
+    For each unit:
+    1. Translate tasks to motion primitives
+    2. Read sensor data before execution
+    3. Execute motions with timing
+    4. Check for human proximity during operations
+    5. Handle any emergency stops if needed
+    
+    Monitor sensors continuously and adapt to environmental changes.
+  expected_output: |
+    Execution report showing:
+    - Motion primitives translated for each task
+    - Sensor readings captured during operations
+    - All executed motions with timings
+    - Any safety checks performed
+
+monitor_quality:
+  description: |
+    Monitor production quality in real-time for all 5 units.
+    For each completed unit:
+    1. Inspect product quality against specifications
+    2. Record quality metrics
+    
+    After completing each product batch:
+    1. Analyze quality trends for the batch
+    2. Suggest process improvements based on findings
+    3. Predict maintenance needs for robots used
+    
+    Provide continuous feedback to improve manufacturing process.
+  expected_output: |
+    Quality report including:
+    - Individual inspection results for all 5 units
+    - Trend analysis for Widget-A batch (3 units) and Widget-B batch (2 units)
+    - Process improvement recommendations
+    - Predictive maintenance forecasts
+
+handle_exceptions:
+  description: |
+    Monitor for anomalies throughout production of all 5 units.
+    Expected disruptions:
+    - Unit 2: Equipment failure (robot_1)
+    - Unit 4: Material shortage (component_B)
+    - Unit 5: Human intervention (safety inspection)
+    
+    For each disruption:
+    1. Detect the anomaly immediately
+    2. Generate appropriate recovery strategy
+    3. Validate safety protocols are maintained
+    4. Log the incident for learning
+    
+    Coordinate with planning agent to adapt plans during disruptions.
+  expected_output: |
+    Exception handling report showing:
+    - All anomalies detected with details
+    - Recovery strategies generated for each disruption
+    - Safety protocol validations
+    - Incident logs for all exceptions handled
+
+generate_report:
+  description: |
+    Generate a comprehensive final production report summarizing the entire 
+    manufacturing run. Include:
+    
+    1. Production summary (units completed, products, quality rate)
+    2. Agent performance (actions taken by each agent)
+    3. Disruption handling details (all 3 disruptions)
+    4. Collaboration mechanisms demonstrated
+    5. Process improvements identified
+    6. Key achievements and metrics
+    
+    Track production progress and ensure all goals were met.
+  expected_output: |
+    A detailed markdown report saved as 'manufacturing_report.md' containing:
+    - Executive summary with key metrics
+    - Complete timeline of agent activities
+    - Disruption handling success stories
+    - Quality and performance analysis
+    - Recommendations for future improvements

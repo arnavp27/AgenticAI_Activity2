@@ -1,0 +1,113 @@
+{
+  "production_orders": [
+    {
+      "product": "Widget-A",
+      "quantity": 3,
+      "description": "Standard assembly widget"
+    },
+    {
+      "product": "Widget-B",
+      "quantity": 2,
+      "description": "Welded component widget"
+    }
+  ],
+  
+  "products": {
+    "Widget-A": {
+      "steps": ["pick_component", "assemble", "quality_check", "place_finished"],
+      "cycle_time_seconds": 30,
+      "quality_tolerance": 0.05,
+      "required_tools": ["gripper", "assembly_tool"]
+    },
+    "Widget-B": {
+      "steps": ["pick_component", "weld", "quality_check", "place_finished"],
+      "cycle_time_seconds": 45,
+      "quality_tolerance": 0.03,
+      "required_tools": ["gripper", "welding_tool"]
+    }
+  },
+  
+  "equipment": {
+    "robot_1": {
+      "status": "operational",
+      "station": "assembly_station",
+      "capabilities": ["pick", "place", "assemble"],
+      "cycles_completed": 450
+    },
+    "robot_2": {
+      "status": "operational",
+      "station": "welding_station",
+      "capabilities": ["pick", "place", "weld"],
+      "cycles_completed": 380
+    },
+    "conveyor": {
+      "status": "operational",
+      "speed": 1.5
+    }
+  },
+  
+  "sensors": {
+    "position_sensor": {
+      "status": "active",
+      "accuracy": 0.01
+    },
+    "force_sensor": {
+      "status": "active",
+      "threshold": 50
+    },
+    "vision_system": {
+      "status": "active",
+      "resolution": "high"
+    },
+    "temperature_sensor": {
+      "status": "active",
+      "current": 22
+    }
+  },
+  
+  "materials": {
+    "component_A": {
+      "stock": 100,
+      "location": "bin_1"
+    },
+    "component_B": {
+      "stock": 50,
+      "location": "bin_2"
+    }
+  },
+  
+  "disruptions": [
+    {
+      "type": "equipment_failure",
+      "target": "robot_1",
+      "occurs_at_unit": 2,
+      "severity": "medium",
+      "description": "Servo motor malfunction"
+    },
+    {
+      "type": "material_shortage",
+      "target": "component_B",
+      "occurs_at_unit": 4,
+      "description": "Supply chain delay"
+    },
+    {
+      "type": "human_intervention",
+      "location": "assembly_station",
+      "occurs_at_unit": 5,
+      "reason": "routine_safety_inspection",
+      "duration_seconds": 20
+    }
+  ],
+  
+  "quality_standards": {
+    "dimensional_tolerance": 0.05,
+    "surface_finish": "smooth",
+    "inspection_points": 3
+  },
+  
+  "safety_protocols": {
+    "human_detection_distance": 2.0,
+    "emergency_stop_time": 0.5,
+    "restricted_zones": ["robot_workspace"]
+  }
+}
